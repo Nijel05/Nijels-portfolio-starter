@@ -3,16 +3,19 @@
    TODO: Try asking Copilot to suggest a color palette for you.
    ============================================================ */
 :root {
-  --color-bg: #ffffff;
-  --color-bg-alt: #f5f7fa;
-  --color-text: #1a1a2e;
-  --color-text-muted: #555577;
-  --color-accent: #4f46e5;
-  --color-accent-hover: #4338ca;
-  --color-border: #e2e8f0;
+  --color-bg: #f0f8ff;
+  --color-bg-alt: #e0f2f7;
+  --color-text: #0d2c3a;
+  --color-text-muted: #4a6b7c;
+  --color-accent: #0080ab;
+  --color-accent-hover: #005f7f;
+  --color-border: #b8d8e8;
+  --color-ocean-dark: #003f5c;
+  --color-ocean-light: #6ecae3;
   --font-main: 'Segoe UI', system-ui, sans-serif;
   --radius: 10px;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow: 0 2px 12px rgba(0, 60, 90, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 60, 90, 0.2);
   --transition: 0.2s ease;
 }
 
@@ -60,16 +63,13 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--shadow);
+  padding: 1rem 2rem;\n  background: linear-gradient(90deg, #0d2c3a 0%, #003f5c 100%);\n  border-bottom: 3px solid #0080ab;\n  box-shadow: var(--shadow-lg);
 }
 
 .nav-logo {
   font-weight: 700;
   font-size: 1.2rem;
-  color: var(--color-accent);
+  color: #6ecae3;
 }
 
 .nav-links {
@@ -79,12 +79,13 @@ a:hover {
 }
 
 .nav-links a {
-  color: var(--color-text);
+  color: #e0f2f7;
   font-weight: 500;
+  transition: color var(--transition);
 }
 
 .nav-links a:hover {
-  color: var(--color-accent);
+  color: #6ecae3;
 }
 
 /* TODO: The nav isn't responsive on mobile yet.
@@ -100,7 +101,9 @@ a:hover {
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  background: linear-gradient(135deg, rgba(0, 63, 92, 0.8) 0%, rgba(0, 128, 171, 0.7) 100%), url('assets/photo-1583212292454-1fe6229603b7.avif') center/cover;
+  background-attachment: fixed;
+  color: #fff;
 }
 
 .hero-content {
@@ -112,16 +115,19 @@ a:hover {
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .highlight {
-  color: var(--color-accent);
+  color: #6ecae3;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--color-text-muted);
+  color: #e0f2f7;
   margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================================
@@ -130,27 +136,31 @@ a:hover {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  background: var(--color-accent);
+  background: #0080ab;
   color: #fff !important;
   border-radius: var(--radius);
   font-weight: 600;
-  transition: background var(--transition), transform var(--transition);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 128, 171, 0.3);
 }
 
 .btn:hover {
-  background: var(--color-accent-hover);
+  background: #005f7f;
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 128, 171, 0.5);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--color-accent) !important;
-  border: 2px solid var(--color-accent);
+  color: #0080ab !important;
+  border: 2px solid #0080ab;
+  box-shadow: none;
 }
 
 .btn-outline:hover {
-  background: var(--color-accent);
+  background: #0080ab;
   color: #fff !important;
+  box-shadow: 0 6px 16px rgba(0, 128, 171, 0.5);
 }
 
 /* ============================================================
@@ -160,10 +170,11 @@ a:hover {
   padding: 5rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  background: linear-gradient(180deg, #f0f8ff 0%, #e0f2f7 100%);
 }
 
 .section-alt {
-  background: var(--color-bg-alt);
+  background: linear-gradient(180deg, #e0f2f7 0%, #d0e8f0 100%);
   max-width: 100%;
   padding: 5rem 2rem;
 }
@@ -179,6 +190,7 @@ h2 {
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+  color: #003f5c;
 }
 
 /* Accent underline on section headings */
@@ -187,10 +199,10 @@ h2::after {
   position: absolute;
   bottom: -6px;
   left: 0;
-  width: 40px;
-  height: 4px;
-  background: var(--color-accent);
-  border-radius: 2px;
+  width: 60px;
+  height: 5px;
+  background: linear-gradient(90deg, #0080ab 0%, #6ecae3 100%);
+  border-radius: 3px;
 }
 
 /* ============================================================
@@ -207,16 +219,33 @@ h2::after {
   margin-top: 1rem;
 }
 
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #0080ab;
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 128, 171, 0.4);
+  object-fit: cover;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 128, 171, 0.6);
+}
+
 .avatar-placeholder {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: var(--color-bg-alt);
-  border: 3px solid var(--color-border);
+  border: 5px solid var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
 
 /* ============================================================
@@ -229,27 +258,28 @@ h2::after {
 }
 
 .project-card {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 2px solid #b8d8e8;
   border-radius: var(--radius);
   padding: 1.5rem;
-  box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 63, 92, 0.1);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lg);
+  border-color: #0080ab;
 }
 
 .project-card h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: var(--color-text);
+  color: #003f5c;
 }
 
 .project-card p {
-  color: var(--color-text-muted);
+  color: #4a6b7c;
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
@@ -265,10 +295,10 @@ h2::after {
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.2rem 0.6rem;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
+  background: #d0e8f0;
+  border: 1px solid #b8d8e8;
   border-radius: 999px;
-  color: var(--color-text-muted);
+  color: #003f5c;
 }
 
 .project-links {
@@ -292,12 +322,19 @@ h2::after {
 
 .skill-badge {
   padding: 0.5rem 1rem;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 2px solid #0080ab;
   border-radius: var(--radius);
   font-size: 0.9rem;
   font-weight: 500;
-  /* TODO: Ask Copilot to add an emoji or icon prefix to each badge */
+  color: #003f5c;
+  transition: all var(--transition);
+}
+
+.skill-badge:hover {
+  background: #0080ab;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 128, 171, 0.3);
 }
 
 /* ============================================================
@@ -321,9 +358,11 @@ h2::after {
 footer {
   text-align: center;
   padding: 2rem;
-  color: var(--color-text-muted);
+  color: #e0f2f7;
+  background: linear-gradient(90deg, #0d2c3a 0%, #003f5c 100%);
   font-size: 0.875rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 3px solid #0080ab;
+  margin-top: 2rem;
 }
 
 /* ============================================================
@@ -334,10 +373,22 @@ footer {
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 
+  .profile-photo,
   .avatar-placeholder {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
   }
 }

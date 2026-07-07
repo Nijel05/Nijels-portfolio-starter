@@ -22,7 +22,6 @@ For each entry, note:
 - **Feature/task: /explain code for the index.html file** 
 - **Copilot feature used:'Ask' feature in the chat** 
 - **Prompt:explain how the code works and what it does**
-  > 
 - **Result:This is a portfolio website made with vanilla HTML, CSS, and JavaScript. The page has six main sections: a navigation bar, hero section, about, projects, skills, and contact area. HTML defines the structure, CSS handles the styling using custom properties for theming, and JavaScript dynamically populates the projects and skills sections by reading data from arrays in script.js. To use it, replace all the placeholder text with your real information and add your project and skill data to the JavaScript file.** 
 - **What I changed or did next:I updated the hero section with my real name and a personal tagline, then saved the file, committed the changes, pushed them to GitHub, and confirmed that my GitHub Pages site deployed successfully.** 
 
@@ -31,18 +30,16 @@ For each entry, note:
 ## Phase 2 — Guided Tasks
 
 ### Entry 2 — About section
-- **Copilot feature used:** 
-- **Prompt:**
-  > 
-- **Result:** 
-- **What I changed or did next:** 
+- **Copilot feature used: Copilot chat** 
+- **Prompt: Rewrite the Bio to sound more profesional and approchable for a software         engerning portfolio while keeping it 2-3 sentances. ME: I am a recent graduate from Norfolk State University with bacholeres in software engenering. I also have an associates in general studys that I obtained in Highschool. I am also currently enrolled in a internship called the Catalyst Program bases out of USCS teaching HBCU students about open-source coding projects and how to contribute to open source projects. das just a little info on me, use what you can and remake that bio but about me!** 
+- **Result: Copilot helped me make a professional (not to bland/boring either) About me      bio** 
+- **What I changed or did next:I replaced the placeholder about section with my perosnal info, saved the file, commited the change, pushed it to github** 
 
 ---
 
 ### Entry 3 — Projects
 - **Copilot feature used:** 
 - **Prompt:**
-  > 
 - **Result:** 
 - **What I changed or did next:** 
 
@@ -51,7 +48,6 @@ For each entry, note:
 ### Entry 4 — Dark mode
 - **Copilot feature used:** 
 - **Prompt:**
-  > 
 - **Result:** 
 - **What I changed or did next:** 
 
@@ -60,7 +56,6 @@ For each entry, note:
 ### Entry 5 — Responsive layout
 - **Copilot feature used:** 
 - **Prompt:**
-  > 
 - **Result:** 
 - **What I changed or did next:** 
 
@@ -73,21 +68,18 @@ For each entry, note:
 ### Entry 6
 - **Copilot feature used:** 
 - **Prompt:**
-  > 
 - **Result:** 
 - **What I changed or did next:** 
 
 ### Entry 7
 - **Copilot feature used:** 
 - **Prompt:**
-  > 
 - **Result:** 
 - **What I changed or did next:** 
 
 ### Entry 8 — A prompt that didn't work well
 - **Copilot feature used:** 
 - **What I asked:**
-  > 
 - **What went wrong:** 
 - **How I fixed it (revised prompt or manual edit):** 
 
