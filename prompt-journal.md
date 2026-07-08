@@ -54,10 +54,10 @@ For each entry, note:
 ---
 
 ### Entry 5 — Responsive layout
-- **Copilot feature used:** 
-- **Prompt:**
-- **Result:** 
-- **What I changed or did next:** 
+- **Copilot feature used:** Chat mode
+- **Prompt:** Improve the responsive styles in the CSS file for screens under 600px. The nav links should stack or hide, the hero text should be smaller, and the projects grid should be single-column.
+- **Result:** Created comprehensive mobile-first responsive design for screens under 600px. Implemented stacked navbar layout, reduced hero text sizes (1.5rem heading, 0.95rem subtitle), single-column projects grid, optimized contact links to full width, reduced padding/spacing throughout, and improved overall mobile UX.
+- **What I changed or did next:** Enhanced style.css with new @media (max-width: 600px) query. Updated navbar to wrap with stacked logo and nav links. Reduced hero section size (50vh, smaller fonts, smaller buttons). Optimized all sections with reduced padding (2.5rem vs 4rem). Made projects grid single-column with smaller cards. Set contact links to full-width vertical stack. Reduced all font sizes, spacing, and icon sizes for small screens. Tested on mobile viewport. Committed to GitHub.
 
 ---
 
