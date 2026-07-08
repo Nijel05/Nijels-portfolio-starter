@@ -124,6 +124,29 @@ function updateYear() {
 }
 
 // ============================================================
+// SCROLL ANIMATIONS
+// ============================================================
+function observeScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'scrollFadeIn 0.8s ease-out forwards';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.section, .project-card').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// ============================================================
 // TYPING ANIMATION FOR NAME
 // ============================================================
 function typeHeadline() {
@@ -156,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSkills();
   renderFooter();
   updateYear();
+  observeScrollAnimations();
   
   // Trigger typing animation after a short delay
   setTimeout(typeHeadline, 300);
