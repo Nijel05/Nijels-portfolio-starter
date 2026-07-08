@@ -94,6 +94,29 @@
   }
 }
 
+@keyframes backgroundPan {
+  0% { background-position: 0% center; }
+  50% { background-position: 2% center; }
+  100% { background-position: 0% center; }
+}
+
+@keyframes fishSwim {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(20px) translateY(-5px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(var(--bubble-drift, 0));
+    opacity: 0;
+  }
+}
+
 /* ============================================================
    RESET & BASE
    ============================================================ */
@@ -114,6 +137,7 @@ body {
   color: var(--color-text);
   line-height: 1.7;
   position: relative;
+  animation: backgroundPan 20s ease-in-out infinite;
 }
 
 body::before {
@@ -636,6 +660,61 @@ footer {
 .social-icons svg {
   width: 20px;
   height: 20px;
+}
+
+/* ============================================================
+   ANIMATED FISH
+   ============================================================ */
+.fish-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fish {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  opacity: 0.5;
+  animation: fishSwim 6s ease-in-out infinite;
+}
+
+.fish:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.fish:nth-child(2) {
+  top: 50%;
+  left: 70%;
+  animation-delay: 2s;
+  animation-duration: 8s;
+}
+
+.fish:nth-child(3) {
+  top: 70%;
+  left: 20%;
+  animation-delay: 4s;
+  animation-duration: 7s;
+}
+
+/* ============================================================
+   BUBBLES
+   ============================================================ */
+.bubble {
+  position: fixed;
+  bottom: -50px;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(110, 202, 227, 0.3));
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* ============================================================

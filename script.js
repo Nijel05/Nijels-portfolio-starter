@@ -147,6 +147,43 @@ function observeScrollAnimations() {
 }
 
 // ============================================================
+// BUBBLE ANIMATION ON PAGE LOAD
+// ============================================================
+function createBubbles() {
+  const bubbleCount = 8;
+  
+  for (let i = 0; i < bubbleCount; i++) {
+    setTimeout(() => {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      
+      // Random size between 10px and 40px
+      const size = Math.random() * 30 + 10;
+      bubble.style.width = size + 'px';
+      bubble.style.height = size + 'px';
+      
+      // Random horizontal position
+      bubble.style.left = Math.random() * 100 + '%';
+      
+      // Random drift for horizontal movement
+      const drift = (Math.random() - 0.5) * 100;
+      bubble.style.setProperty('--bubble-drift', drift + 'px');
+      
+      // Random animation duration between 3-6 seconds
+      const duration = Math.random() * 3 + 3;
+      bubble.style.animation = `bubbleRise ${duration}s ease-in forwards`;
+      
+      document.body.appendChild(bubble);
+      
+      // Remove bubble after animation completes
+      setTimeout(() => {
+        bubble.remove();
+      }, duration * 1000);
+    }, i * 150); // Stagger bubble creation
+  }
+}
+
+// ============================================================
 // TYPING ANIMATION FOR NAME
 // ============================================================
 function typeHeadline() {
@@ -180,6 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFooter();
   updateYear();
   observeScrollAnimations();
+  createBubbles();
   
   // Trigger typing animation after a short delay
   setTimeout(typeHeadline, 300);

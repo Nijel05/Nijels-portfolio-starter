@@ -71,13 +71,13 @@ For each entry, note:
 - **Result:** Copilot provided comprehensive CSS redesign strategy. Successfully implemented glass-morphism effects throughout (backdrop-filter blur, semi-transparent containers, gradient overlays), integrated underwater background image, updated CSS variables for new theme, added scroll-triggered animations, enhanced all component styling (about grid, project cards, skill badges).
 - **What I changed or did next:** Updated style.css with ~12 sequential replace operations covering variables, body, animations, sections, headers, components. Tested on desktop and mobile. Committed changes to GitHub with detailed commit message describing all visual improvements.
 
-### Entry 7
-- **Copilot feature used:** 
-- **Prompt:**
-- **Result:** 
-- **What I changed or did next:** 
+### Entry 7 — Underwater animations
+- **Copilot feature used:** Chat mode
+- **Prompt:** Make the background move subtly left/right. Add swimming fish that move slowly across the page. Create a bubble rise animation that triggers on page load with bubbles floating up and fading out.
+- **Result:** Implemented three new animations: background panning (20s loop, subtle 2% shift), three animated fish at different depths/speeds with SVG graphics, and dynamic bubble generation on load with random sizes, positions, and drift patterns.
+- **What I changed or did next:** Updated style.css with new @keyframes (backgroundPan, fishSwim, bubbleRise), added fish SVG elements to HTML with fish-container, added createBubbles() function to script.js that spawns 8 bubbles with staggered timing (150ms between each), updated DOMContentLoaded to call createBubbles(). Committed to GitHub.
 
-### Entry 8 — A prompt that didn't work well
+### Entry 8
 - **Copilot feature used:** 
 - **What I asked:**
 - **What went wrong:** 
