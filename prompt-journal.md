@@ -38,10 +38,10 @@ For each entry, note:
 ---
 
 ### Entry 3 — Projects
-- **Copilot feature used:** 
-- **Prompt:**
-- **Result:** 
-- **What I changed or did next:** 
+- **Copilot feature used:** Chat mode
+- **Prompt:** Help me add my real projects to the portfolio. I have: Virtual Smart Study Assistant (full-stack with React, Node.js, Express, PostgreSQL), Course Planning System (HTML, CSS, JS with local storage), and Developer Portfolio (this site). Include descriptions and tech tags.
+- **Result:** Copilot structured the project data format and provided guidance. I manually created the project objects in script.js with realistic, technical descriptions and complete tech stacks.
+- **What I changed or did next:** Updated script.js projects array with 3 real projects, committed to GitHub, verified they render correctly on the live site.
 
 ---
 
@@ -63,13 +63,13 @@ For each entry, note:
 
 ## Phase 3 — Independent Feature
 
-**Feature I chose:** 
+**Feature I chose:** Premium underwater-themed glass-morphism redesign
 
-### Entry 6
-- **Copilot feature used:** 
-- **Prompt:**
-- **Result:** 
-- **What I changed or did next:** 
+### Entry 6 — Glass-morphism design
+- **Copilot feature used:** Chat mode with multi-edit operations
+- **Prompt:** Upgrade the overall design of my portfolio while keeping the existing layout, content, and responsive behavior. Replace plain backgrounds with full-width underwater background. Create glass-style containers with frosted blur effects. Update the color palette to deep navy and teal. Enhance spacing, add fade-in animations, and maintain professional non-flashy aesthetic.
+- **Result:** Copilot provided comprehensive CSS redesign strategy. Successfully implemented glass-morphism effects throughout (backdrop-filter blur, semi-transparent containers, gradient overlays), integrated underwater background image, updated CSS variables for new theme, added scroll-triggered animations, enhanced all component styling (about grid, project cards, skill badges).
+- **What I changed or did next:** Updated style.css with ~12 sequential replace operations covering variables, body, animations, sections, headers, components. Tested on desktop and mobile. Committed changes to GitHub with detailed commit message describing all visual improvements.
 
 ### Entry 7
 - **Copilot feature used:** 
