@@ -6,7 +6,7 @@ const projects = [
     title: "Virtual Smart Study Assistant (VSSA)",
     description: "A full-stack study assistant helping students manage study sessions, track progress, import questions, practice with flashcards, and prepare for exams using an intelligent study workflow. Built as a senior capstone project.",
     tags: ["React", "JavaScript", "Node.js", "Express", "PostgreSQL"],
-    github: "https://github.com/Nijel05",
+    github: "https://github.com/Nijel05/VSSA--Virtual-Smart-Study-Assistant-.git",
     demo: null,
   },
   {
@@ -52,8 +52,8 @@ function renderProjects() {
           ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
         </div>
         <div class="project-links">
-          ${project.github ? `<a href="${project.github}" target="_blank">GitHub →</a>` : ""}
-          ${project.demo ? `<a href="${project.demo}" target="_blank">Live Demo →</a>` : ""}
+          ${project.github ? `<a href="${project.github}" target="_blank" rel="noopener noreferrer">GitHub →</a>` : ""}
+          ${project.demo ? `<a href="${project.demo}" target="_blank" rel="noopener noreferrer">Live Demo →</a>` : ""}
         </div>
       </div>
     `
