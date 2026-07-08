@@ -30,6 +30,116 @@
    "Add a dark mode theme using CSS custom properties" */
 
 /* ============================================================
+   DARK MODE THEME
+   ============================================================ */
+[data-theme="dark"] {
+  --color-bg: #0d1b2a;
+  --color-bg-alt: #1a2332;
+  --color-text: #e8f1f5;
+  --color-text-muted: #a8c5d1;
+  --color-accent: #4fc3f7;
+  --color-accent-hover: #29b6f6;
+  --color-border: #2c3e50;
+  --color-ocean-dark: #0a0e14;
+  --color-ocean-light: #4fc3f7;
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(180deg, #0d1b2a 0%, #1a2f42 50%, #0f1e2e 100%);
+}
+
+[data-theme="dark"] body::before {
+  opacity: 0.25;
+}
+
+[data-theme="dark"] .section::before {
+  opacity: 0.12;
+}
+
+[data-theme="dark"] .section-alt::before {
+  opacity: 0.18;
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3 {
+  color: #e8f1f5;
+}
+
+[data-theme="dark"] .btn {
+  background: #4fc3f7;
+  color: #0d1b2a;
+}
+
+[data-theme="dark"] .btn:hover {
+  background: #29b6f6;
+  box-shadow: 0 6px 20px rgba(79, 195, 247, 0.3);
+}
+
+[data-theme="dark"] .btn-outline {
+  background: transparent;
+  border: 2px solid #4fc3f7;
+  color: #4fc3f7;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: #4fc3f7;
+  color: #0d1b2a;
+}
+
+[data-theme="dark"] .project-card {
+  background: rgba(41, 57, 86, 0.12);
+  border-color: rgba(79, 195, 247, 0.25);
+}
+
+[data-theme="dark"] .project-card:hover {
+  background: rgba(79, 195, 247, 0.15);
+  border-color: rgba(79, 195, 247, 0.4);
+}
+
+[data-theme="dark"] .skill-badge {
+  background: rgba(41, 57, 86, 0.2);
+  border-color: rgba(79, 195, 247, 0.2);
+  color: #e8f1f5;
+}
+
+[data-theme="dark"] .skill-badge:hover {
+  background: linear-gradient(135deg, rgba(79, 195, 247, 0.3) 0%, rgba(41, 182, 246, 0.2) 100%);
+  border-color: #4fc3f7;
+}
+
+[data-theme="dark"] .tag {
+  background: rgba(41, 57, 86, 0.3);
+  border-color: rgba(79, 195, 247, 0.3);
+  color: #a8d5e8;
+}
+
+[data-theme="dark"] .about-grid {
+  background: rgba(41, 57, 86, 0.15);
+  border-color: rgba(79, 195, 247, 0.15);
+  color: #d4e8f0;
+}
+
+[data-theme="dark"] .contact-intro {
+  background: rgba(41, 57, 86, 0.15);
+  border-color: rgba(79, 195, 247, 0.15);
+  color: #d4e8f0;
+}
+
+[data-theme="dark"] .navbar {
+  background: rgba(13, 27, 42, 0.95);
+  border-color: rgba(79, 195, 247, 0.1);
+}
+
+[data-theme="dark"] .nav-links a {
+  color: #4fc3f7;
+}
+
+[data-theme="dark"] .nav-links a:hover {
+  color: #29b6f6;
+}
+
+/* ============================================================
    ANIMATIONS
    ============================================================ */
 @keyframes fadeIn {
@@ -562,6 +672,26 @@ h2::after {
   color: #ffffff;
   box-shadow: 0 8px 24px rgba(0, 128, 171, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transform: translateY(-4px) scale(1.1);
+}
+
+/* ============================================================
+   DARK MODE BUTTON
+   ============================================================ */
+.dark-mode-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform var(--transition), filter var(--transition);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-btn:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 4px rgba(110, 202, 227, 0.5));
 }
 
 /* ============================================================

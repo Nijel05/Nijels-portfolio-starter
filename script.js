@@ -147,6 +147,35 @@ function observeScrollAnimations() {
 }
 
 // ============================================================
+// DARK MODE TOGGLE
+// ============================================================
+function toggleDarkMode() {
+  const body = document.body;
+  const isDarkMode = body.getAttribute('data-theme') === 'dark';
+  
+  // Toggle the attribute
+  if (isDarkMode) {
+    body.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    document.getElementById('dark-mode-toggle').textContent = '🌙';
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    document.getElementById('dark-mode-toggle').textContent = '☀️';
+  }
+}
+
+// Load theme preference on page load
+function loadThemePreference() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    document.body.setAttribute('data-theme', 'dark');
+    const btn = document.getElementById('dark-mode-toggle');
+    if (btn) btn.textContent = '☀️';
+  }
+}
+
+// ============================================================
 // BUBBLE ANIMATION ON PAGE LOAD
 // ============================================================
 function createBubbles() {
@@ -219,8 +248,15 @@ document.addEventListener("DOMContentLoaded", () => {
   observeScrollAnimations();
   createBubbles();
   
+  // Load saved theme preference
+  loadThemePreference();
+  
+  // Wire up dark mode toggle button
+  const darkModeBtn = document.getElementById('dark-mode-toggle');
+  if (darkModeBtn) {
+    darkModeBtn.addEventListener('click', toggleDarkMode);
+  }
+  
   // Trigger typing animation after a short delay
   setTimeout(typeHeadline, 300);
-
-  // TODO: Wire up your dark mode toggle button here once you add it
 });

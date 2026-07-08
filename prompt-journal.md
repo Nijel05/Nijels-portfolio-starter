@@ -46,10 +46,10 @@ For each entry, note:
 ---
 
 ### Entry 4 — Dark mode
-- **Copilot feature used:** 
-- **Prompt:**
-- **Result:** 
-- **What I changed or did next:** 
+- **Copilot feature used:** Chat mode + manual implementation
+- **Prompt:** Add a dark mode toggle button to the navbar. Implement toggle logic that switches a `data-theme='dark'` attribute on the `<body>` and saves the preference to localStorage so it persists on reload. Then generate dark theme CSS that overrides custom properties with a dark color scheme.
+- **Result:** Successfully implemented full dark mode toggle. Added 🌙/☀️ button to navbar. Created toggleDarkMode() function to switch theme and persist preference. Implemented loadThemePreference() to load saved theme on page load. Generated comprehensive dark theme CSS with custom properties overrides for all components (buttons, cards, text, etc.).
+- **What I changed or did next:** Added dark-mode-toggle button to index.html navbar. Created toggleDarkMode() and loadThemePreference() functions in script.js. Wired button to event listener in DOMContentLoaded. Added [data-theme="dark"] CSS block with complete dark theme (navy backgrounds, light cyan accents). Added .dark-mode-btn styling with hover effects. Tested theme persistence across page reloads. Committed to GitHub.
 
 ---
 
