@@ -28,11 +28,19 @@ const projects = [
 // ============================================================
 // SKILLS DATA
 // ============================================================
+// SKILLS DATA
+// ============================================================
 const skills = [
-  "Python", "JavaScript", "Java", "C++",
-  "HTML & CSS", "Git & GitHub",
-  "React", "Node.js",
-  "SQL", "Linux",
+  { name: "Python", rating: 4, description: "Comfortable building scripts, automation tools, and backend applications." },
+  { name: "JavaScript", rating: 4, description: "Experienced creating interactive websites and dynamic front-end features." },
+  { name: "Java", rating: 4, description: "Strong understanding of object-oriented programming and application development." },
+  { name: "C++", rating: 5, description: "Confident developing efficient software while applying core computer science concepts." },
+  { name: "HTML & CSS", rating: 4, description: "Skilled at creating responsive, modern, and accessible web interfaces." },
+  { name: "Git & GitHub", rating: 5, description: "Daily experience using version control, pull requests, branching, and collaboration." },
+  { name: "React", rating: 4, description: "Built multiple React applications using reusable components and modern development practices." },
+  { name: "Node.js", rating: 3, description: "Comfortable creating REST APIs and connecting frontend applications to backend services." },
+  { name: "SQL", rating: 4, description: "Experienced designing databases, writing queries, and managing application data." },
+  { name: "Linux", rating: 5, description: "Confident working in Linux environments using the command line, Git, and development tools." },
 ];
 
 // ============================================================
@@ -69,8 +77,48 @@ function renderSkills() {
   if (!container) return;
 
   container.innerHTML = skills
-    .map((skill) => `<span class="skill-badge">${skill}</span>`)
+    .map((skill) => {
+      const stars = '★'.repeat(skill.rating) + '☆'.repeat(5 - skill.rating);
+      return `
+        <div class="skill-badge-wrapper">
+          <span class="skill-badge" data-skill="${skill.name}" data-rating="${skill.rating}" data-description="${skill.description}">
+            ${skill.name}
+          </span>
+          <div class="skill-tooltip">
+            <div class="tooltip-rating">${stars}</div>
+            <div class="tooltip-description">${skill.description}</div>
+          </div>
+        </div>
+      `;
+    })
     .join("");
+  
+  // Add hover event listeners
+  addSkillTooltipListeners();
+}
+
+// ============================================================
+// SKILL TOOLTIP LISTENERS
+// ============================================================
+function addSkillTooltipListeners() {
+  const badges = document.querySelectorAll('.skill-badge');
+  badges.forEach(badge => {
+    badge.addEventListener('mouseenter', () => {
+      const wrapper = badge.parentElement;
+      const tooltip = wrapper.querySelector('.skill-tooltip');
+      if (tooltip) {
+        tooltip.classList.add('active');
+      }
+    });
+    
+    badge.addEventListener('mouseleave', () => {
+      const wrapper = badge.parentElement;
+      const tooltip = wrapper.querySelector('.skill-tooltip');
+      if (tooltip) {
+        tooltip.classList.remove('active');
+      }
+    });
+  });
 }
 
 // ============================================================

@@ -108,6 +108,16 @@
   border-color: #4fc3f7;
 }
 
+[data-theme="dark"] .skill-tooltip {
+  background: rgba(13, 27, 42, 0.98);
+  border-color: rgba(79, 195, 247, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(79, 195, 247, 0.2);
+}
+
+[data-theme="dark"] .skill-tooltip::after {
+  border-top-color: rgba(79, 195, 247, 0.25);
+}
+
 [data-theme="dark"] .tag {
   background: rgba(41, 57, 86, 0.3);
   border-color: rgba(79, 195, 247, 0.3);
@@ -408,8 +418,6 @@ a:hover {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
-  background: linear-gradient(135deg, var(--color-glass-bg) 0%, rgba(240, 248, 255, 0.05) 100%);
-  border-top: 1px solid var(--color-glass-border);
   animation: scrollFadeIn 1s ease-out forwards;
   opacity: 0;
 }
@@ -419,44 +427,14 @@ a:hover {
 .section:nth-of-type(5) { animation-delay: 0.3s; }
 .section:nth-of-type(6) { animation-delay: 0.4s; }
 
-.section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('assets/photo-1560364897-91578ff41817.avif') center/cover;
-  background-attachment: fixed;
-  opacity: 0.08;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .section > * {
   position: relative;
   z-index: 1;
 }
 
 .section-alt {
-  background: linear-gradient(135deg, rgba(26, 58, 82, 0.08) 0%, rgba(10, 22, 40, 0.1) 100%);
   max-width: 100%;
   padding: 6rem 2rem;
-  border-top: 1px solid var(--color-glass-border);
-}
-
-.section-alt::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('assets/photo-1560364897-91578ff41817.avif') center/cover;
-  background-attachment: fixed;
-  opacity: 0.12;
-  z-index: 0;
-  pointer-events: none;
 }
 
 .section-alt > * {
@@ -640,6 +618,11 @@ h2::after {
   justify-content: center;
 }
 
+.skill-badge-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
 .skill-badge {
   padding: 0.65rem 1.3rem;
   background: var(--color-glass-bg);
@@ -653,6 +636,7 @@ h2::after {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  display: block;
 }
 
 .skill-badge:nth-child(1) { animation-delay: 0.05s; }
@@ -672,6 +656,62 @@ h2::after {
   color: #ffffff;
   box-shadow: 0 8px 24px rgba(0, 128, 171, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transform: translateY(-4px) scale(1.1);
+}
+
+/* ============================================================
+   SKILL TOOLTIPS
+   ============================================================ */
+.skill-tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 30, 46, 0.95);
+  border: 1px solid rgba(110, 202, 227, 0.3);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  width: 200px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(110, 202, 227, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-50%) translateY(10px);
+  z-index: 10;
+}
+
+.skill-tooltip.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.skill-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgba(110, 202, 227, 0.3);
+}
+
+.tooltip-rating {
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.tooltip-description {
+  font-size: 0.8rem;
+  color: #b3e5fc;
+  line-height: 1.4;
+  font-style: italic;
 }
 
 /* ============================================================
@@ -1037,6 +1077,20 @@ footer {
   .skill-badge {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
+  }
+
+  .skill-tooltip {
+    width: 160px;
+    padding: 0.6rem 0.8rem;
+    bottom: 110%;
+  }
+
+  .tooltip-rating {
+    font-size: 0.9rem;
+  }
+
+  .tooltip-description {
+    font-size: 0.75rem;
   }
 
   #contact {
