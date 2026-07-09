@@ -529,6 +529,66 @@ h2::after {
 }
 
 /* ============================================================
+EXPERIENCE & EDUCATION
+============================================================ */
+.timeline-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+
+.timeline-card {
+background: var(--color-glass-bg);
+border: 1px solid var(--color-glass-border);
+border-radius: var(--radius-lg);
+padding: 2rem;
+backdrop-filter: blur(10px);
+box-shadow: var(--shadow-glass);
+transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.timeline-card:hover {
+transform: translateY(-6px);
+border-color: #6ecae3;
+box-shadow: 0 14px 34px rgba(0, 128, 171, 0.28);
+}
+
+.timeline-label {
+display: inline-block;
+margin-bottom: 0.9rem;
+padding: 0.3rem 0.75rem;
+border-radius: 999px;
+background: rgba(110, 202, 227, 0.15);
+border: 1px solid rgba(110, 202, 227, 0.35);
+color: #6ecae3;
+font-size: 0.75rem;
+font-weight: 700;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+}
+
+.timeline-card h3 {
+color: #ffffff;
+font-size: 1.2rem;
+margin-bottom: 0.35rem;
+}
+
+.timeline-subtitle {
+color: #b3e5fc;
+font-weight: 600;
+margin-bottom: 1rem;
+}
+
+.timeline-card ul {
+padding-left: 1.2rem;
+color: #d0e8f0;
+}
+
+.timeline-card li {
+margin-bottom: 0.55rem;
+}
+
+/* ============================================================
    PROJECTS
    ============================================================ */
 .projects-grid {
